@@ -7,34 +7,25 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@main
-      - name: setup ndk
-        uses: nttld/setup-ndk@main
-        id: setup-ndk
-        with:
-          ndk-version: r21e
-          local-cache: true
       - uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.3.6
-
       - name: script run line haha
         run: |
           haxe -version
-          haxelib install lime
-          haxelib git openfl https://github.com/openfl/openfl develop
+          haxelib install lime 8.3.1
+          haxelib install openfl 9.5.1
           haxelib install flixel 4.11.0
-          haxelib git hxcpp https://github.com/haxefoundation/hxcpp master
-          haxelib install flixel-tools
-          haxelib install flixel-ui
+          haxelib install flixel-ui 2.6.1
           haxelib install flixel-addons 2.11.0
-          haxelib install hscript
+          haxelib install hscript 2.5.0
+          haxelib install polymod 1.5.2
+          haxelib install linc_luajit 0.0.7
+          haxelib install actuate 1.9.0
+          haxelib git hxcpp https://github.com/haxefoundation/hxcpp
           haxelib git faxe https://github.com/uhrobots/faxe
-          haxelib git polymod https://github.com/larsiusprime/polymod
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib git extension-webm https://github.com/Sirox228/extension-webm
-          haxelib git linc_luajit https://github.com/Sirox228/linc_luajit
-          haxelib install actuate
-          haxelib list
+          haxelib git extension-webm https://github.com/brusakas/extension-webm
       - name: compile mobile
         run: |
           haxelib run lime config ANDROID_SDK $ANDROID_HOME
