@@ -229,7 +229,7 @@ class Paths
 		var selectedFile:String = "";
 
 		#if sys
-		var files:Array<String> = sys.FileSystem.readDirectory(key);
+		var files:Array<String> = ["frase1", "frase2", "frase3", "frase4", "frase5"];
 		for (i in 0...files.length)
 		{
 			files[i] = StringTools.replace(files[i], ".png", "");
