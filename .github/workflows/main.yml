@@ -12,8 +12,8 @@ jobs:
       - name: script run line haha
         run: |
           haxe -version
-          haxelib install lime 8.3.1
-          haxelib install openfl 9.5.1
+          haxelib install lime 7.9.0
+          haxelib install openfl 9.1.0
           haxelib install flixel 4.11.0
           haxelib install flixel-ui 2.6.1
           haxelib install flixel-addons 2.11.0
