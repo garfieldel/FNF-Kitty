@@ -279,7 +279,7 @@ class FreeplayState extends MusicBeatState
 		else #end if (accepted)
 		{
 			var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
-			var poop:String = Highscore.formatSong(songLowercase, curDifficulty);
+			var poop:String = Highscore.formatSong(songLowercase);
 			if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
 				poop = songLowercase;
 				trace('Couldnt find file');
@@ -302,7 +302,7 @@ class FreeplayState extends MusicBeatState
 		}
 		else if(controls.RESET #if mobileC || _virtualpad.buttonY.justPressed #end)
 		{
-			openSubState(new ResetScoreSubState(songs[curSelected].songName, curDifficulty, songs[curSelected].songCharacter));
+			openSubState(new ResetScoreSubState(songs[curSelected].songName, songs[curSelected].songCharacter));
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 		}
 		super.update(elapsed);
