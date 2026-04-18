@@ -977,7 +977,7 @@ class PlayState extends MusicBeatState
 		char.y += char.positionArray[1];
 	}
 
-	public function startVideo(name:String):Void {
+	/* public function startVideo(name:String):Void {
 		var foundFile:Bool = false;
 		var fileName = name;
 		if(OpenFlAssets.exists("assets/videos/" + fileName + ".webm")) 
@@ -1012,7 +1012,7 @@ class PlayState extends MusicBeatState
 				startCountdown();
 			}
 		}
-	}	
+	} */	
 
 	var dialogueCount:Int = 0;
 	//You don't have to add a song, just saying. You can just do "startDialogue(dialogueJson);" and it should work
